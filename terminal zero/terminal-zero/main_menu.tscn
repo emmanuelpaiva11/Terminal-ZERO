@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bvl8g7iu7cp6t"]
+
+[ext_resource type="Texture2D" uid="uid://751s6737iegy" path="res://image.jpg" id="1_7vrkn"]
+[ext_resource type="FontFile" uid="uid://1ibalqkpdt7h" path="res://Ghastly Panic.ttf" id="2_7vrkn"]
+[ext_resource type="Script" uid="uid://fd7xccwhyhia" path="res://button.gd" id="3_fu7sn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_abt14"]
+texture = ExtResource("1_7vrkn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abt14"]
+bg_color = Color(0.4011416, 0.67006105, 0.4977585, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="main menu" type="Node" unique_id=2137900866]
+
+[node name="Panel" type="Panel" parent="." unique_id=678634557]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_abt14")
+
+[node name="Button" type="Button" parent="." unique_id=1485063919]
+texture_filter = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -95.0
+offset_top = 187.0
+offset_right = 97.0
+offset_bottom = 248.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9882353, 0.050980393, 0.11372549, 1)
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 33
+theme_override_styles/normal = SubResource("StyleBoxFlat_abt14")
+text = "Start Game
+"
+script = ExtResource("3_fu7sn")
+
+[node name="Label" type="Label" parent="." unique_id=2001477336]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -265.0
+offset_top = -57.5
+offset_right = 265.0
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_7vrkn")
+theme_override_font_sizes/font_size = 174
+text = "Terminal ZERO"
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
